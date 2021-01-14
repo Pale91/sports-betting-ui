@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
 
-function App() {
+function AppUI(props, {context}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>App</p>
+      <ul>
+        {props.events.map(e =>
+          <li>{e.name}</li>
+        )}
+      </ul>
     </div>
   );
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    events: state.events
+})
+
+const mapDispatchToProps = () => ({
+})
+
+const App = connect(mapStateToProps, mapDispatchToProps)(AppUI);
 
 export default App;
