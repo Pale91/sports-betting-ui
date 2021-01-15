@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 const initialState = {
   events: [{
-    name: "Event 1"
+    id: 1,
+    name: "Event 1",
+    odds1stTeam: 1.2,
+    oddsForDraw: 2.0,
+    odds2ndTeam: 1.5
   },
   {
-    name: "Event 2"
+    id: 2,
+    name: "Event 2",
+    odds1stTeam: 1.2,
+    oddsForDraw: 2.0,
+    odds2ndTeam: 1.5
   }]
 };
 
